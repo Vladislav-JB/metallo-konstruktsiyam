@@ -1,31 +1,510 @@
 <!doctype html>
-<html lang="ru" data-stub>
+<html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Металлоконструкции и ЛСТК · демо готовится</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>СтальКаркас — завод ЛСТК и металлоконструкций: проектирование, производство, строительство</title>
+<meta name="description" content="Демо-концепт сайта завода ЛСТК: быстровозводимые здания из металлоконструкций под ключ — проектирование, производство, монтаж, генподряд.">
 <meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="120">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;600&display=swap">
+<meta property="og:title" content="СтальКаркас — завод ЛСТК и металлоконструкций">
+<meta property="og:description" content="Быстровозводимые здания под ключ: проектирование, производство, монтаж.">
+<meta property="og:image" content="https://web-atelie.ru/metallo-konstruktsiyam/assets/hero.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Carlito:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F6F3EE;--ink:#1F1E1C;--muted:#6B655C;--acc:#8A6737}
-@media (prefers-color-scheme:dark){:root{--bg:#161615;--ink:#EDE7DC;--muted:#A9A195;--acc:#C9A66B}}
-*{box-sizing:border-box}html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;display:grid;place-items:center;padding:24px}
-main{max-width:560px;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center}
-.k{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:600}
-h1{font:500 clamp(2rem,6vw,3rem)/1.1 "Cormorant Garamond",Georgia,serif;margin:0;text-wrap:balance}
-p{margin:0;color:var(--muted)}
-.bar{width:220px;height:3px;background:color-mix(in srgb,var(--acc) 20%,transparent);border-radius:3px;overflow:hidden}
-.bar i{display:block;height:100%;width:40%;background:var(--acc);animation:m 1.6s ease-in-out infinite}
-@keyframes m{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
-@media (prefers-reduced-motion:reduce){.bar i{animation:none;width:60%}}
+:root{--ink:#14202b;--ink2:#3b4a57;--mut:#6b7884;--line:#e3e8ec;--bg:#f4f6f8;--card:#fff;--steel:#1f3a52;--steel2:#2c5577;--acc:#e8541e;--acc2:#ff7a45;--r:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 Inter,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:Montserrat,sans-serif;line-height:1.15}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px Inter;padding:15px 26px;border-radius:6px;transition:background .2s,transform .15s}
+.btn--acc{background:var(--acc);color:#fff}.btn--acc:hover{background:#cf4512}
+.btn--line{border:1.5px solid rgba(255,255,255,.55);color:#fff}.btn--line:hover{background:rgba(255,255,255,.12)}
+.kick{font:700 12px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+section{padding:84px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.sh h2{font-size:clamp(26px,3.2vw,38px);margin-top:8px;max-width:760px}
+.sh a{font-weight:700;color:var(--steel2);border-bottom:1.5px solid currentColor}
+.h2{font-size:clamp(26px,3.2vw,38px);margin-top:8px}
+
+.top{background:var(--steel);color:#d7e2ec;font-size:14px}
+.top .wrap{display:flex;align-items:center;gap:26px;min-height:42px;flex-wrap:wrap}
+.top b{color:#fff}
+.top .r{margin-left:auto;display:flex;gap:22px;align-items:center}
+.top button{color:#fff;font-weight:700;border-bottom:1px dashed rgba(255,255,255,.6)}
+
+.hdr{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 20px rgba(20,32,43,.05)}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:76px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo i{width:44px;height:44px;border-radius:8px;background:var(--steel);position:relative;flex:none}
+.logo i:before,.logo i:after{content:"";position:absolute;background:var(--acc)}
+.logo i:before{left:10px;right:10px;top:12px;height:5px}
+.logo i:after{left:19px;width:6px;top:12px;bottom:10px}
+.logo b{display:block;font:800 19px Montserrat;letter-spacing:.01em}
+.logo small{display:block;font-size:12px;color:var(--mut);line-height:1.3}
+.menu{display:flex;gap:4px;margin-left:auto}
+.mi{position:relative}
+.mi>a{display:block;padding:26px 11px;font-weight:600;font-size:15px;color:var(--ink2)}
+.mi>a:hover,.mi:hover>a{color:var(--acc)}
+.mi.has>a:after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 0 3px 8px}
+.dd{position:absolute;top:100%;left:-10px;min-width:300px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:0 0 8px 8px;box-shadow:0 20px 40px rgba(20,32,43,.12);padding:12px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s}
+.mi:hover .dd,.mi:focus-within .dd{opacity:1;visibility:visible;transform:none}
+.dd a{display:block;padding:8px 20px;font-size:14.5px;color:var(--ink2)}
+.dd a:hover{background:var(--bg);color:var(--acc)}
+.hdr .btn{padding:12px 18px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:8px;background:var(--bg);margin-left:auto;position:relative}
+.burger span,.burger:before,.burger:after{content:"";position:absolute;left:12px;right:12px;height:2px;background:var(--ink)}
+.burger span{top:21px}.burger:before{top:14px}.burger:after{top:28px}
+.mnav{display:none;border-top:1px solid var(--line);background:#fff;max-height:calc(100vh - 70px);overflow:auto}
+.mnav.on{display:block}
+.mnav details{border-bottom:1px solid var(--line)}
+.mnav summary{padding:15px 20px;font-weight:700;list-style:none;display:flex;justify-content:space-between;cursor:pointer}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary:after{content:"+";color:var(--acc);font-size:20px;line-height:1}
+.mnav details[open] summary:after{content:"−"}
+.mnav details a{display:block;padding:9px 32px;color:var(--ink2);font-size:15px}
+.mnav>a{display:block;padding:15px 20px;font-weight:700;border-bottom:1px solid var(--line)}
+
+.hero{position:relative;color:#fff;min-height:620px;display:flex;align-items:center;background:#0f1b26}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,20,29,.92) 0%,rgba(11,20,29,.75) 45%,rgba(11,20,29,.25) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:70px;padding-bottom:70px}
+.hero h1{font-size:clamp(30px,4.6vw,58px);font-weight:800;max-width:780px;margin-top:16px}
+.hero h1 span{color:var(--acc2)}
+.hero p{font-size:19px;max-width:620px;color:#d5dee6;margin-top:20px}
+.hero ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-weight:600}
+.hero li{display:flex;align-items:center;gap:10px}
+.hero li:before{content:"";width:8px;height:8px;background:var(--acc);transform:rotate(45deg)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;max-width:860px;border-top:1px solid rgba(255,255,255,.2)}
+.stats div{padding:20px 20px 0 0}
+.stats b{display:block;font:800 34px Montserrat;color:#fff}
+.stats span{font-size:14px;color:#b8c5d1}
+
+.objs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.obj{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.obj:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,32,43,.1)}
+.obj figure{position:relative;aspect-ratio:16/10;overflow:hidden}
+.obj figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.obj:hover figure img{transform:scale(1.05)}
+.obj figure span{position:absolute;left:14px;top:14px;background:var(--acc);color:#fff;font:700 12px Inter;padding:5px 10px;border-radius:4px}
+.obj>div{padding:20px}
+.obj h3{font-size:18px}
+.obj p{color:var(--mut);margin-top:6px;font-size:15px}
+.obj dl{display:flex;gap:22px;margin-top:14px;font-size:14px}
+.obj dt{color:var(--mut)}
+.obj dd{font-weight:700}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tab{padding:9px 16px;border-radius:30px;border:1.5px solid var(--line);font-weight:600;font-size:14px;color:var(--ink2)}
+.tab.on{background:var(--steel);border-color:var(--steel);color:#fff}
+
+.sol{background:var(--bg)}
+.sol__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.sol__lead{font-size:18px;color:var(--ink2);margin-top:16px}
+.sol__items{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.sol__items div{background:#fff;border-radius:var(--r);padding:22px;border-left:4px solid var(--acc)}
+.sol__items h3{font-size:17px}
+.sol__items p{color:var(--mut);font-size:14.5px;margin-top:8px}
+.why{background:var(--steel);color:#fff;border-radius:14px;padding:36px;position:relative;overflow:hidden}
+.why:after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border:30px solid rgba(255,255,255,.05);transform:rotate(45deg)}
+.why h3{font-size:24px}
+.why p{color:#c6d3de;margin-top:10px}
+.why ol{list-style:none;counter-reset:w;margin-top:22px;display:grid;gap:14px;position:relative;z-index:1}
+.why li{counter-increment:w;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.why li:before{content:counter(w);display:grid;place-items:center;width:34px;height:34px;border-radius:6px;background:var(--acc);font:800 15px Montserrat}
+
+.srv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.srv a{position:relative;border-radius:var(--r);overflow:hidden;min-height:360px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.srv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.srv a:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,20,29,.1),rgba(11,20,29,.88));z-index:1}
+.srv a:hover img{transform:scale(1.06)}
+.srv a>*:not(img){position:relative;z-index:2}
+.srv b{font:800 13px Montserrat;color:var(--acc2)}
+.srv h3{font-size:21px;margin-top:6px}
+.srv p{font-size:14.5px;color:#d2dbe3;margin-top:8px}
+.srv span{margin-top:14px;font-weight:700;font-size:14px}
+
+.types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.type{border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;gap:16px;align-items:center;transition:border-color .2s}
+.type:hover{border-color:var(--acc)}
+.type svg{width:56px;height:56px;flex:none}
+.type h3{font-size:17px}
+.type p{color:var(--mut);font-size:14px;margin-top:4px}
+.type b{color:var(--steel2)}
+
+.qc{background:var(--bg)}
+.qc__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+.qc__img{border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.qc__img img{width:100%;height:100%;object-fit:cover}
+.steps{display:grid;gap:16px;margin-top:26px}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;background:#fff;border-radius:var(--r);padding:20px}
+.step i{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(232,84,30,.12);color:var(--acc);font:800 18px Montserrat;font-style:normal}
+.step h3{font-size:17px}
+.step p{color:var(--mut);font-size:14.5px;margin-top:4px}
+
+.calc{background:linear-gradient(135deg,#14202b,#1f3a52);color:#fff}
+.calc__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.calc__lead{color:#c6d3de;margin-top:12px}
+.cf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}
+.cf label{display:grid;gap:6px;font-size:13px;font-weight:600;color:#b8c5d1}
+.cf .full{grid-column:1/-1}
+.fld{width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:6px;padding:12px 14px;color:#fff;min-width:0}
+.fld:focus{outline:none;border-color:var(--acc2)}
+.fld option{color:var(--ink)}
+.res{background:#fff;color:var(--ink);border-radius:14px;padding:30px}
+.res h3{font-size:20px}
+.res .big{font:800 34px Montserrat;color:var(--acc);margin-top:14px}
+.res table{width:100%;border-collapse:collapse;margin-top:18px;font-size:14.5px}
+.res td{padding:9px 0;border-bottom:1px solid var(--line)}
+.res td:last-child{text-align:right;font-weight:700;white-space:nowrap;padding-left:10px}
+.res form{display:grid;gap:10px;margin-top:20px}
+.res .fld,.modal .fld{background:var(--bg);border-color:var(--line);color:var(--ink)}
+.note{font-size:12.5px;color:var(--mut);margin-top:8px}
+.ok{display:none;padding:12px 14px;border-radius:6px;background:#e7f6ee;color:#127a45;font-weight:600}
+
+.news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.new{border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px}
+.new time{font-size:13px;color:var(--mut)}
+.new span{align-self:flex-start;font:700 11px Inter;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:4px;background:rgba(232,84,30,.1);color:var(--acc)}
+.new h3{font-size:17px}
+.new p{color:var(--mut);font-size:14.5px}
+
+.foot{background:#0f1922;color:#aeb9c3;padding:56px 0 34px;font-size:14.5px}
+.foot__g{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px}
+.foot h4{color:#fff;font-size:15px;margin-bottom:14px}
+.foot__g a{display:block;padding:4px 0}
+.foot__g a:hover{color:#fff}
+.foot .logo b{color:#fff}
+.foot .logo small{color:#8d99a4}
+.foot__b{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 24px;border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:24px}
+.foot__made{font-style:italic}
+.foot__made a{font-family:Calibri,Carlito,sans-serif;font-weight:700;font-style:italic;font-size:1.12em;margin-left:.3em;color:#fff}
+.foot__made a:hover{text-decoration:underline}
+.foot__made img{display:inline;width:40px;height:52px;vertical-align:-7px;margin-left:6px}
+.foot__demo{flex-basis:100%;font-size:13px;color:#7f8b96}
+
+.ov{position:fixed;inset:0;background:rgba(10,16,22,.6);z-index:90;display:none;align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.modal{background:#fff;border-radius:14px;padding:30px;width:min(420px,100%);position:relative}
+.modal h3{font-size:22px;padding-right:40px}
+.modal p{color:var(--mut);margin-top:6px}
+.modal form{display:grid;gap:12px;margin-top:18px}
+.x{position:absolute;right:12px;top:12px;width:36px;height:36px;border-radius:8px;background:var(--bg);font-size:18px}
+
+@media (max-width:1180px){.menu,.hdr .btn{display:none}.burger{display:block}}
+@media (max-width:1000px){
+  .objs,.news,.types,.srv{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sol__grid,.qc__grid,.calc__grid{grid-template-columns:1fr}
+  .foot__g{grid-template-columns:1fr 1fr}
+  .top .hide{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  section{padding:60px 0}
+  .top .wrap{gap:14px;font-size:13px;justify-content:space-between}
+  .top .r{margin-left:0;width:100%;justify-content:space-between}
+  .hdr .wrap{height:66px}
+  .logo i{width:38px;height:38px}
+  .logo i:before{left:8px;right:8px;top:10px}.logo i:after{left:16px;top:10px;bottom:8px}
+  .logo b{font-size:17px}
+  .logo small{display:none}
+  .hero{min-height:560px}
+  .hero p{font-size:16.5px}
+  .hero__cta .btn{flex:1 1 100%}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats b{font-size:26px}
+  .objs,.news,.types,.srv,.sol__items,.cf{grid-template-columns:1fr}
+  .srv a{min-height:260px}
+  .why{padding:26px}
+  .res{padding:22px}
+  .res .big{font-size:28px}
+  .foot__g{grid-template-columns:1fr}
+  .btn{white-space:normal;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body><main>
-<div class="k">Демо-версия по вашему ТЗ</div>
-<h1>Металлоконструкции и ЛСТК</h1>
-<div class="bar" aria-hidden="true"><i></i></div>
-<p>Сайт сейчас собирается по вашему техническому заданию.<br>Будет готов сегодня к <b>15:42</b> – по этой же ссылке.</p>
-<p style="font-size:.85rem">Страница обновится сама.</p>
-</main></body></html>
+<body>
+
+<div class="top"><div class="wrap">
+  <span class="hide">Завод в Центральной России · доставка по РФ и СНГ</span>
+  <span class="hide">Пн–Пт: 8:30–17:30</span>
+  <div class="r">
+    <a href="tel:88000000000"><b>8 (800) 000-00-00</b></a>
+    <a class="hide" href="tel:+79000000000">+7 (900) 000-00-00</a>
+    <button data-call>Заказать звонок</button>
+  </div>
+</div></div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i><span><b>СтальКаркас</b><small>Завод ЛСТК и металлоконструкций</small></span></a>
+    <nav class="menu" aria-label="Главное меню">
+      <div class="mi has"><a href="#uslugi">Производство</a><div class="dd"><a href="#uslugi">Профиль для ЛСТК</a><a href="#resheniya">Промышленные здания</a><a href="#resheniya">Склады и здания для хранения</a><a href="#resheniya">Животноводческие фермы</a><a href="#resheniya">Спортивные комплексы</a><a href="#resheniya">Магазины и автомойки</a><a href="#uslugi">Фермы, кровля, стеновые панели</a></div></div>
+      <div class="mi has"><a href="#uslugi">Проектирование</a><div class="dd"><a href="#uslugi">Проектирование стадий П и Р</a><a href="#uslugi">Проектирование металлоконструкций</a><a href="#uslugi">Промышленные здания и склады</a><a href="#uslugi">Ангары и навесы</a><a href="#uslugi">Инженерные системы</a></div></div>
+      <div class="mi has"><a href="#uslugi">Строительство</a><div class="dd"><a href="#uslugi">Монтаж металлоконструкций</a><a href="#uslugi">Склады и цеха</a><a href="#uslugi">Сельхозобъекты и хранилища</a><a href="#uslugi">Логистические комплексы</a><a href="#uslugi">Нестандартные объекты</a></div></div>
+      <div class="mi has"><a href="#genpodryad">Генподряд</a><div class="dd"><a href="#genpodryad">Перепроектирование</a><a href="#genpodryad">Генеральный подряд</a><a href="#genpodryad">Генеральный проектировщик</a></div></div>
+      <div class="mi"><a href="#obekty">Объекты</a></div>
+      <div class="mi"><a href="#resheniya">Готовые решения</a></div>
+      <div class="mi has"><a href="#kachestvo">Компания</a><div class="dd"><a href="#kachestvo">О компании</a><a href="#kachestvo">Наше производство</a><a href="#kachestvo">Контроль качества</a><a href="#novosti">Новости и акции</a></div></div>
+      <div class="mi"><a href="#kontakty">Контакты</a></div>
+    </nav>
+    <a class="btn btn--acc" href="#raschet">Быстрый расчёт</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Меню для телефона">
+    <details><summary>Производство</summary><a href="#uslugi">Профиль для ЛСТК</a><a href="#resheniya">Промышленные здания</a><a href="#resheniya">Склады</a><a href="#resheniya">Фермы</a><a href="#resheniya">Спортивные комплексы</a></details>
+    <details><summary>Проектирование</summary><a href="#uslugi">Стадии П и Р</a><a href="#uslugi">Металлоконструкции</a><a href="#uslugi">Ангары и навесы</a></details>
+    <details><summary>Строительство</summary><a href="#uslugi">Монтаж металлоконструкций</a><a href="#uslugi">Склады и цеха</a><a href="#uslugi">Сельхозобъекты</a></details>
+    <details><summary>Генподряд</summary><a href="#genpodryad">Перепроектирование</a><a href="#genpodryad">Генеральный подряд</a><a href="#genpodryad">Генпроектирование</a></details>
+    <a href="#obekty">Объекты</a><a href="#resheniya">Готовые решения</a><a href="#kachestvo">Компания</a><a href="#kontakty">Контакты</a>
+    <a href="#raschet" style="color:var(--acc)">Быстрый расчёт →</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img src="assets/hero.webp" alt="Монтаж каркаса промышленного здания из металлоконструкций" fetchpriority="high">
+  <div class="wrap">
+    <span class="kick" style="color:var(--acc2)">Собственное производство ЛСТК</span>
+    <h1>Быстровозводимые здания из металлоконструкций <span>под ключ</span></h1>
+    <p>Проектируем, производим на своём заводе и монтируем склады, цеха, ангары, фермы и торговые здания. Один договор — от эскиза до сдачи объекта.</p>
+    <ul><li>Проект за 10 дней</li><li>Каркас с завода — без посредников</li><li>Гарантия 5 лет</li></ul>
+    <div class="hero__cta"><a class="btn btn--acc" href="#raschet">Рассчитать стоимость здания</a><a class="btn btn--line" href="#obekty">Смотреть объекты</a></div>
+    <div class="stats">
+      <div><b>15 лет</b><span>на рынке металлоконструкций</span></div>
+      <div><b>600 т</b><span>каркасов в месяц</span></div>
+      <div><b>480+</b><span>построенных объектов</span></div>
+      <div><b>от 45 дней</b><span>до сдачи здания</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="obekty"><div class="wrap">
+  <div class="sh"><div><span class="kick">Портфолио</span><h2>Выполненные объекты</h2></div><a href="#obekty">Все объекты</a></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="objs" id="objs"></div>
+</div></section>
+
+<section class="sol" id="genpodryad"><div class="wrap">
+  <div class="sol__grid">
+    <div>
+      <span class="kick">Генподряд и оптимизация</span>
+      <h2 class="h2">Комплекс решений по снижению затрат на строительство</h2>
+      <p class="sol__lead">Берём объект целиком: пересчитываем проект под ЛСТК, производим каркас и строим как генподрядчик. Вы экономите на металле и на сроках, а за результат отвечаем мы.</p>
+      <div class="sol__items">
+        <div><h3>Перепроектирование</h3><p>Снижаем металлоёмкость до 30% за счёт BIM-проектирования и лёгких профилей.</p></div>
+        <div><h3>Генеральный подряд</h3><p>Один подрядчик на весь объект: фундамент, каркас, ограждающие конструкции, инженерия.</p></div>
+        <div><h3>Генпроектирование</h3><p>Полный комплект документации стадий П и Р с прохождением экспертизы.</p></div>
+        <div><h3>Своё производство</h3><p>Каркас изготавливаем на собственном заводе — цена без наценок посредников.</p></div>
+      </div>
+    </div>
+    <div class="why">
+      <h3>5 причин заказать перепроектирование у нас</h3>
+      <p>Экономия без ущерба для надёжности и эксплуатационных характеристик здания.</p>
+      <ol>
+        <li>Гарантированное качество работ при любом уровне сложности.</li>
+        <li>Учтём все требования технического задания и ваши пожелания.</li>
+        <li>Проектом занимаются инженеры с опытом более 10 лет.</li>
+        <li>Документация по действующим нормам и стандартам.</li>
+        <li>Сроки фиксируем в договоре — и соблюдаем их.</li>
+      </ol>
+    </div>
+  </div>
+</div></section>
+
+<section id="uslugi"><div class="wrap">
+  <div class="sh"><div><span class="kick">Что мы делаем</span><h2>Наши услуги</h2></div><a href="#raschet">Получить консультацию</a></div>
+  <div class="srv">
+    <a href="#raschet"><img src="assets/prod.webp" alt="Цех производства металлоконструкций" loading="lazy"><b>01</b><h3>Производство</h3><p>Профиль ЛСТК, фермы, стропильные системы, стеновые панели и перекрытия.</p><span>Подробнее →</span></a>
+    <a href="#raschet"><img src="assets/proj.webp" alt="Металлический каркас кровли" loading="lazy"><b>02</b><h3>Проектирование</h3><p>Здания и металлоконструкции стадий П и Р, расчёты и сопровождение.</p><span>Подробнее →</span></a>
+    <a href="#raschet"><img src="assets/mont.webp" alt="Монтажники на подъёмнике у фермы" loading="lazy"><b>03</b><h3>Строительство</h3><p>Монтаж каркаса и строительство под ключ с контролем на каждом этапе.</p><span>Подробнее →</span></a>
+    <a href="#genpodryad"><img src="assets/o4.webp" alt="Каркас промышленного здания" loading="lazy"><b>04</b><h3>Генподряд</h3><p>Перепроектирование, генподряд и генпроектирование одним договором.</p><span>Подробнее →</span></a>
+  </div>
+</div></section>
+
+<section id="resheniya" style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="kick">Типовые проекты</span><h2>Готовые решения — цена за м² под ключ</h2></div></div>
+  <div class="types" id="types"></div>
+</div></section>
+
+<section class="qc" id="kachestvo"><div class="wrap">
+  <div class="qc__grid">
+    <div class="qc__img"><img src="assets/o5.webp" alt="Готовый пролёт склада изнутри" loading="lazy"></div>
+    <div>
+      <span class="kick">Контроль качества</span>
+      <h2 class="h2">Проверяем металл на каждом этапе</h2>
+      <p style="color:var(--ink2);margin-top:14px">Надёжность здания закладывается на заводе. Каждая партия проходит три ступени контроля — от поступления металла до отгрузки на объект.</p>
+      <div class="steps">
+        <div class="step"><i>1</i><div><h3>Входной контроль</h3><p>Проверяем сертификаты, толщину и покрытие рулонной стали.</p></div></div>
+        <div class="step"><i>2</i><div><h3>Операционный контроль</h3><p>Геометрия профиля и отверстий на станке, выборочные замеры каждой смены.</p></div></div>
+        <div class="step"><i>3</i><div><h3>Приёмочный контроль</h3><p>Контрольная сборка узлов, маркировка элементов и паспорт на партию.</p></div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="calc" id="raschet"><div class="wrap">
+  <div class="calc__grid">
+    <div>
+      <span class="kick" style="color:var(--acc2)">Быстрый расчёт</span>
+      <h2 class="h2">Сколько будет стоить ваше здание</h2>
+      <p class="calc__lead">Укажите размеры и назначение — покажем ориентировочную цену каркаса и здания под ключ. Точную смету инженер пришлёт после уточнения нагрузок и региона.</p>
+      <div class="cf">
+        <label class="full">Назначение здания<select class="fld" id="cType"></select></label>
+        <label>Ширина пролёта, м<input class="fld" id="cW" type="number" min="6" max="60" value="18"></label>
+        <label>Длина, м<input class="fld" id="cL" type="number" min="6" max="300" value="48"></label>
+        <label>Высота до низа фермы, м<input class="fld" id="cH" type="number" min="3" max="16" value="6"></label>
+        <label>Утепление стен и кровли<select class="fld" id="cIns"><option value="0">Холодное здание</option><option value="1">Тёплое, сэндвич 100 мм</option><option value="2">Тёплое, сэндвич 150 мм</option></select></label>
+      </div>
+    </div>
+    <div class="res" aria-live="polite">
+      <h3>Ориентировочная стоимость</h3>
+      <div class="big" id="rTotal">—</div>
+      <table>
+        <tr><td>Площадь</td><td id="rArea">—</td></tr>
+        <tr><td>Металлокаркас (≈ <span id="rT">—</span> т)</td><td id="rFrame">—</td></tr>
+        <tr><td>Стены и кровля</td><td id="rWalls">—</td></tr>
+        <tr><td>Монтаж</td><td id="rMont">—</td></tr>
+        <tr><td>Срок строительства</td><td id="rDays">—</td></tr>
+      </table>
+      <form id="calcForm" novalidate>
+        <input class="fld" name="name" placeholder="Ваше имя">
+        <input class="fld" name="phone" type="tel" placeholder="+7 (___) ___-__-__">
+        <button class="btn btn--acc" type="submit">Получить точную смету</button>
+        <div class="ok" id="okCalc">Спасибо! Это демо — заявка никуда не отправлена.</div>
+      </form>
+      <p class="note">Расчёт демонстрационный и не является офертой.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="novosti"><div class="wrap">
+  <div class="sh"><div><span class="kick">Компания</span><h2>Новости и акции</h2></div><a href="#novosti">Все новости</a></div>
+  <div class="news">
+    <article class="new"><span>Акция</span><time>до 30 ноября</time><h3>Проект в подарок при заказе каркаса</h3><p>Разработаем проект стадии Р бесплатно при заказе металлокаркаса от 50 тонн.</p></article>
+    <article class="new"><span>Новость</span><time>Сентябрь</time><h3>Запустили вторую линию профилирования</h3><p>Мощность завода выросла до 600 тонн в месяц, сроки изготовления сократились на треть.</p></article>
+    <article class="new"><span>Объект</span><time>Август</time><h3>Сдали логистический комплекс 24 × 120 м</h3><p>Каркас изготовили за 18 дней, монтаж выполнили за 5 недель.</p></article>
+  </div>
+</div></section>
+</main>
+
+<footer class="foot" id="kontakty"><div class="wrap">
+  <div class="foot__g">
+    <div>
+      <a class="logo" href="#top"><i></i><span><b>СтальКаркас</b><small>Завод ЛСТК и металлоконструкций</small></span></a>
+      <p style="margin-top:16px">Проектирование, производство и строительство зданий из металлоконструкций по всей России и СНГ.</p>
+    </div>
+    <div><h4>Услуги</h4><a href="#uslugi">Производство</a><a href="#uslugi">Проектирование</a><a href="#uslugi">Строительство</a><a href="#genpodryad">Генподряд</a></div>
+    <div><h4>Компания</h4><a href="#obekty">Объекты</a><a href="#resheniya">Готовые решения</a><a href="#kachestvo">Контроль качества</a><a href="#novosti">Новости</a></div>
+    <div><h4>Контакты</h4><a href="tel:88000000000">8 (800) 000-00-00</a><a href="tel:+79000000000">+7 (900) 000-00-00</a><a href="#kontakty">info@example.ru</a><span style="display:block;padding:4px 0">Пн–Пт: 8:30–17:30</span></div>
+  </div>
+  <div class="foot__b">
+    <span>© СтальКаркас, 2026</span>
+    <span class="foot__made">Создан в <a href="https://web-atelie.ru/">«Веб-Ателье»</a><img src="assets/web-atelie.png" alt=""></span>
+    <span class="foot__demo">Демо-концепт сайта завода металлоконструкций. Название, контакты, объекты, цены и новости условные, фото — из стоковой библиотеки.</span>
+  </div>
+</div></footer>
+
+<div class="ov" id="ov"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mT">
+  <button class="x" data-close aria-label="Закрыть">✕</button>
+  <h3 id="mT">Заказать звонок</h3><p>Инженер перезвонит в рабочее время и ответит на вопросы по проекту.</p>
+  <form id="callForm" novalidate>
+    <input class="fld" name="name" placeholder="Ваше имя">
+    <input class="fld" name="phone" type="tel" placeholder="+7 (___) ___-__-__">
+    <button class="btn btn--acc" type="submit">Жду звонка</button>
+    <div class="ok" id="okCall">Спасибо! Это демо — заявка никуда не отправлена.</div>
+  </form>
+</div></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString('ru-RU') + ' ₽';
+
+const OBJ = [
+  ['sklad','Складской комплекс','o1','Склад','Центральная Россия','24 × 96 × 8 м','2 304 м²'],
+  ['sklad','Логистический центр','o2','Склад','Поволжье','36 × 120 × 10 м','4 320 м²'],
+  ['agro','Животноводческая ферма','o3','Сельхоз','Черноземье','21 × 144 × 5 м','3 024 м²'],
+  ['prom','Производственный цех','o4','Промышленность','Урал','30 × 72 × 9 м','2 160 м²'],
+  ['prom','Цех с кран-балкой 10 т','o5','Промышленность','Северо-Запад','24 × 60 × 12 м','1 440 м²'],
+  ['comm','Торговый павильон','o6','Торговля','Юг России','18 × 36 × 6 м','648 м²']
+];
+const TABS = [['','Все'],['sklad','Склады'],['prom','Промышленность'],['agro','Сельское хозяйство'],['comm','Торговля']];
+let tab = '';
+function renderObjs(){
+  $('tabs').innerHTML = TABS.map(([k, n]) => `<button class="tab${tab === k ? ' on' : ''}" data-tab="${k}">${n}</button>`).join('');
+  $('objs').innerHTML = OBJ.filter(o => !tab || o[0] === tab).map(o => `<article class="obj"><figure><img src="assets/${o[2]}.webp" alt="${o[1]}" loading="lazy"><span>${o[3]}</span></figure>
+    <div><h3>${o[1]}</h3><p>${o[4]}</p><dl><div><dt>Размеры</dt><dd>${o[5]}</dd></div><div><dt>Площадь</dt><dd>${o[6]}</dd></div></dl></div></article>`).join('');
+}
+
+// Готовые решения: [ключ, название, описание, ₽/м² под ключ (холодное), значок]
+const TYPES = [
+  ['sklad','Склады и ангары','Пролёт до 48 м без колонн',6900,'M6 30 L32 12 L58 30 V54 H6 Z M20 54 V38 H44 V54'],
+  ['prom','Производственные цеха','С кран-балкой до 20 т',8400,'M6 54 V26 L20 18 V26 L34 18 V26 L48 18 V54 Z M52 54 V10 H58 V54'],
+  ['agro','Фермы и птичники','Под оборудование заказчика',6200,'M6 32 L32 16 L58 32 V54 H6 Z M26 54 V40 H38 V54 M12 36 H20 M44 36 H52'],
+  ['comm','Магазины и автомойки','Витражи и навесы',8900,'M6 24 H58 V54 H6 Z M6 24 L12 12 H52 L58 24 M14 34 H30 V54 M36 34 H50 V46 H36 Z'],
+  ['sport','Спортивные комплексы','Большие пролёты, высота до 16 м',9600,'M4 54 Q32 6 60 54 Z M16 54 V44 H48 V54'],
+  ['ang','Навесы и хранилища','Овощехранилища, зернохранилища',5400,'M4 28 L32 14 L60 28 M10 25 V54 M54 25 V54 M10 54 H54']
+];
+function renderTypes(){
+  $('types').innerHTML = TYPES.map(t => `<a class="type" href="#raschet" data-type="${t[0]}"><svg viewBox="0 0 64 64" fill="none" stroke="#1f3a52" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="${t[4]}"/></svg>
+    <div><h3>${t[1]}</h3><p>${t[2]}</p><p>от <b>${t[3].toLocaleString('ru-RU')} ₽/м²</b></p></div></a>`).join('');
+  $('cType').innerHTML = TYPES.map(t => `<option value="${t[0]}">${t[1]}</option>`).join('');
+}
+
+// Расчёт (условные коэффициенты): металл растёт с пролётом и высотой
+function calc(){
+  const t = TYPES.find(x => x[0] === $('cType').value) || TYPES[0];
+  const W = Math.min(60, Math.max(6, +$('cW').value || 6)), L = Math.min(300, Math.max(6, +$('cL').value || 6)), H = Math.min(16, Math.max(3, +$('cH').value || 3)), ins = +$('cIns').value;
+  const area = W * L;
+  const tons = area * (22 + W * .55 + H * 1.6) / 1000;
+  const frame = tons * 165000;
+  const shell = (area + 2 * (W + L) * H) * [650, 2400, 2900][ins];
+  const mont = area * t[3] * .28;
+  $('rArea').textContent = area.toLocaleString('ru-RU') + ' м²';
+  $('rT').textContent = tons.toFixed(1).replace('.', ',');
+  $('rFrame').textContent = fmt(frame);
+  $('rWalls').textContent = fmt(shell);
+  $('rMont').textContent = fmt(mont);
+  $('rDays').textContent = 'от ' + Math.round(30 + area / 120) + ' дней';
+  $('rTotal').textContent = 'от ' + fmt(frame + shell + mont);
+}
+
+document.querySelectorAll('input[type=tel]').forEach(inp => inp.addEventListener('input', () => {
+  let d = inp.value.replace(/\D/g, ''); if (d[0] === '8') d = '7' + d.slice(1); if (d && d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
+  inp.value = d.length > 1 ? '+7 (' + d.slice(1, 4) + (d.length > 4 ? ') ' + d.slice(4, 7) : '') + (d.length > 7 ? '-' + d.slice(7, 9) : '') + (d.length > 9 ? '-' + d.slice(9, 11) : '') : d ? '+7' : '';
+}));
+function demoForm(form, okId){
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const ph = form.querySelector('[type=tel]'), nm = form.querySelector('[name=name]'); let bad = false;
+    [nm, ph].forEach(f => { const v = f === ph ? f.value.replace(/\D/g, '').length === 11 : f.value.trim().length > 1; f.style.borderColor = v ? '' : '#e8541e'; if (!v) bad = true; });
+    if (bad) return;
+    $(okId).style.display = 'block'; form.querySelector('[type=submit]').disabled = true;
+  });
+}
+demoForm($('calcForm'), 'okCalc'); demoForm($('callForm'), 'okCall');
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-tab],[data-type],[data-call],[data-close],.mnav a');
+  if (!t) return;
+  if (t.dataset.tab !== undefined){ tab = t.dataset.tab; renderObjs(); }
+  else if (t.dataset.type){ $('cType').value = t.dataset.type; calc(); }
+  else if (t.dataset.call !== undefined){ $('ov').classList.add('on'); }
+  else if (t.dataset.close !== undefined){ $('ov').classList.remove('on'); }
+  else if (t.matches('.mnav a')){ $('mnav').classList.remove('on'); $('burger').setAttribute('aria-expanded', 'false'); }
+});
+$('ov').addEventListener('click', e => { if (e.target === $('ov')) $('ov').classList.remove('on'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') $('ov').classList.remove('on'); });
+$('burger').onclick = () => { const on = $('mnav').classList.toggle('on'); $('burger').setAttribute('aria-expanded', on); };
+['cType','cW','cL','cH','cIns'].forEach(id => $(id).addEventListener('input', calc));
+
+renderObjs(); renderTypes(); calc();
+</script>
+</body>
+</html>
